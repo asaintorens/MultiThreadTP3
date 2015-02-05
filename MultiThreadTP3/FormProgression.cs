@@ -47,13 +47,15 @@ namespace MultiThreadTP3
         {
          if(e.Cancelled)
          {
-             MessageBox.Show("Cancelled.");
+             MessageBox.Show("Cancelled");
              this.buttonOk.Enabled = true;
          }
          else
          {
+             
              this.progressBar1.Value = 100;
              this.buttonOk.Enabled = true;
+             MessageBox.Show("Succès");
          }
          this.managerListe.ValoriserListeTrier();
          

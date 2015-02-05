@@ -40,10 +40,9 @@ namespace MultiThreadTP3
                 this.tableauNonTrier[compteurNombre] = rand.Next(NOMBRE_DE_RANDOM);
             }
 
-            for (int compteurNombre = 0; compteurNombre < this.tableauNonTrier.Length - 1; compteurNombre++)
-            {
-                this.listViewNonTrier.Items.Add(this.tableauNonTrier[compteurNombre].ToString());
-            }
+            this.ValoriserListe(this.listViewNonTrier, tableauNonTrier);
+
+           
 
         }
 
@@ -108,13 +107,20 @@ namespace MultiThreadTP3
 
         public void ValoriserListeTrier()
         {
-            for (int compteurNombre = 0; compteurNombre < this.tableauNonTrier.Length - 1; compteurNombre++)
-            {
-                this.listViewTrier.Items.Add(this.tableauNonTrier[compteurNombre].ToString());
-            }
+            this.ValoriserListe(this.listViewTrier, this.tableauNonTrier);
         }
 
+        public void ValoriserListe(ListView listView, int[] valeurs)
+        {
+            ListViewItem[] itemsCollection = new ListViewItem[valeurs.Length - 1];
+            for (int compteurNombre = 0; compteurNombre < valeurs.Length - 1; compteurNombre++)
+            {
+                itemsCollection[compteurNombre] = new ListViewItem(valeurs[compteurNombre].ToString());
+            }
 
+            listView.Items.AddRange(itemsCollection);
+
+        }
 
 
 

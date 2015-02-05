@@ -7,3 +7,4 @@ C:\Users\alexa_000\documents\visual studio 2013\Projects\MultiThreadTP3\MultiThr
 C:\Users\alexa_000\documents\visual studio 2013\Projects\MultiThreadTP3\MultiThreadTP3\obj\Debug\MultiThreadTP3.exe
 C:\Users\alexa_000\documents\visual studio 2013\Projects\MultiThreadTP3\MultiThreadTP3\obj\Debug\MultiThreadTP3.pdb
 C:\Users\alexa_000\documents\visual studio 2013\Projects\MultiThreadTP3\MultiThreadTP3\obj\Debug\MultiThreadTP3.FormProgression.resources
+C:\Users\alexa_000\documents\visual studio 2013\Projects\MultiThreadTP3\MultiThreadTP3\obj\Debug\MultiThreadTP3.csprojResolveAssemblyReference.cache

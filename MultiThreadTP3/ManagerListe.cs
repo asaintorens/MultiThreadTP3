@@ -13,8 +13,8 @@ namespace MultiThreadTP3
         public  int NOMBRE_DE_RANDOM;
         private System.Windows.Forms.ListView listViewNonTrier;
         private System.Windows.Forms.ListView listViewTrier;
-        private int[] tableauNonTrier;
-        public int[] tableauTrier;
+        private int[] tableauValeurs;
+       
         public int progression;
         public bool Cancel;
     
@@ -22,7 +22,7 @@ namespace MultiThreadTP3
         {
             // TODO: Complete member initialization
             this.listViewNonTrier = listViewNonTrier;
-            this.listViewTrier = listViewTrier;
+          
             this.NOMBRE_DE_RANDOM=0;
             this.progression = 0;
             this.Cancel = false;
@@ -34,13 +34,13 @@ namespace MultiThreadTP3
             this.listViewNonTrier.Items.Clear();
             this.NOMBRE_DE_RANDOM = nombreEntree;
             Random rand = new Random();
-            this.tableauNonTrier= new int [NOMBRE_DE_RANDOM];
+            this.tableauValeurs= new int [NOMBRE_DE_RANDOM];
             for (int compteurNombre = 0; compteurNombre < NOMBRE_DE_RANDOM; compteurNombre++)
             {
-                this.tableauNonTrier[compteurNombre] = rand.Next(NOMBRE_DE_RANDOM);
+                this.tableauValeurs[compteurNombre] = rand.Next(NOMBRE_DE_RANDOM);
             }
 
-            this.ValoriserListe(this.listViewNonTrier, tableauNonTrier);
+            this.ValoriserListe(this.listViewNonTrier, tableauValeurs);
 
            
 
@@ -58,7 +58,7 @@ namespace MultiThreadTP3
         {
             
             int i, iRech, iMin;
-            int N = this.tableauNonTrier.Length - 1;
+            int N = this.tableauValeurs.Length - 1;
              this.progression = 0;
             int tmp;
 
@@ -70,17 +70,17 @@ namespace MultiThreadTP3
                     break;
                 }
                     for (iRech = iMin = i; iRech < N; iRech++)
-                    if (this.tableauNonTrier[iRech] < this.tableauNonTrier[iMin])
+                    if (this.tableauValeurs[iRech] < this.tableauValeurs[iMin])
                         iMin = iRech;
 
                 if (iMin != i)
                 {
 
-                    tmp = this.tableauNonTrier[iMin];
+                    tmp = this.tableauValeurs[iMin];
 
-                    this.tableauNonTrier[iMin] = this.tableauNonTrier[i];
+                    this.tableauValeurs[iMin] = this.tableauValeurs[i];
 
-                    this.tableauNonTrier[i] = tmp;
+                    this.tableauValeurs[i] = tmp;
 
                 }
 
@@ -107,7 +107,7 @@ namespace MultiThreadTP3
 
         public void ValoriserListeTrier()
         {
-            this.ValoriserListe(this.listViewTrier, this.tableauNonTrier);
+            this.ValoriserListe(this.listViewTrier, this.tableauValeurs);
         }
 
         public void ValoriserListe(ListView listView, int[] valeurs)

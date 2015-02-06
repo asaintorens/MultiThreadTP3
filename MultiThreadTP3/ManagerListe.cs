@@ -22,7 +22,7 @@ namespace MultiThreadTP3
         {
             // TODO: Complete member initialization
             this.listViewNonTrier = listViewNonTrier;
-          
+            this.listViewTrier = listViewTrier;
             this.NOMBRE_DE_RANDOM=0;
             this.progression = 0;
             this.Cancel = false;
